@@ -1,0 +1,3 @@
+INSERT INTO tb_launch (description, due_date, pay_date, value, observation) values ('Salário mensal', '2017-06-10', '2017-06-20', 6500.00, 'Distribuição de lucros');
+INSERT INTO tb_launch (description, due_date, pay_date, value, observation) values ('Conta de Luz', '2017-06-10', '2017-06-20', 200.00, 'Distribuição de lucros');
+INSERT INTO tb_launch (description, due_date, pay_date, value, observation) values ('Negócio próprio', '2017-06-10', '2017-06-20', 100000.00, 'Distribuição de lucros');
