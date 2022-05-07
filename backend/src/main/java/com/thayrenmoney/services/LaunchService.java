@@ -2,6 +2,7 @@ package com.thayrenmoney.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,13 @@ public class LaunchService {
 		list = repository.findAll();
 
 		return list;
+	}
+	
+	@Transactional(readOnly = true)
+	public Launch findById(Long id) {
+		Optional<Launch> obj = repository.findById(id);
+		Launch entity = obj.get();
+		return entity;
 	}
 
 }
