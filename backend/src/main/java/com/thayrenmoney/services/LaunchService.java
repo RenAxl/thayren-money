@@ -55,5 +55,9 @@ public class LaunchService {
 		entity = repository.save(entity);
 		return entity;
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 
 }
