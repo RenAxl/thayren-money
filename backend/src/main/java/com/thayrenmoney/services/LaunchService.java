@@ -31,5 +31,17 @@ public class LaunchService {
 		Launch entity = obj.get();
 		return entity;
 	}
+	
+	@Transactional
+	public Launch insert(Launch Launch) {
+		Launch entity = new Launch();
+		entity.setDescription(Launch.getDescription());
+		entity.setDueDate(Launch.getDueDate());
+		entity.setPayDate(Launch.getPayDate());
+		entity.setValue(Launch.getValue());
+		entity.setObservation(Launch.getObservation());
+		entity = repository.save(entity);
+		return entity;
+	}
 
 }
