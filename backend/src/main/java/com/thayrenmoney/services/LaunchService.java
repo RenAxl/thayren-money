@@ -33,13 +33,25 @@ public class LaunchService {
 	}
 	
 	@Transactional
-	public Launch insert(Launch Launch) {
+	public Launch insert(Launch launch) {
 		Launch entity = new Launch();
-		entity.setDescription(Launch.getDescription());
-		entity.setDueDate(Launch.getDueDate());
-		entity.setPayDate(Launch.getPayDate());
-		entity.setValue(Launch.getValue());
-		entity.setObservation(Launch.getObservation());
+		entity.setDescription(launch.getDescription());
+		entity.setDueDate(launch.getDueDate());
+		entity.setPayDate(launch.getPayDate());
+		entity.setValue(launch.getValue());
+		entity.setObservation(launch.getObservation());
+		entity = repository.save(entity);
+		return entity;
+	}
+	
+	@Transactional
+	public Launch update(Long id, Launch launch) {
+		Launch entity = repository.getOne(id);
+		entity.setDescription(launch.getDescription());
+		entity.setDueDate(launch.getDueDate());
+		entity.setPayDate(launch.getPayDate());
+		entity.setValue(launch.getValue());
+		entity.setObservation(launch.getObservation());
 		entity = repository.save(entity);
 		return entity;
 	}
